@@ -25,3 +25,9 @@ class TestGame(unittest.TestCase):
         new_game.grid = list("BDAANDNEO")
         self.assertIs(new_game.is_valid(''), False)
         self.assertIsNot(new_game.is_valid('ABANDON'), False)
+
+    def test_unknown_word_is_invalid(self):
+        new_game = Game()
+        # Forcer la grille à un scénario de test :
+        new_game.grid = list('KWIENFUQW')
+        self.assertIs(new_game.is_valid('FEUN'), False)
