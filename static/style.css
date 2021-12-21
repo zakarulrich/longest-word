@@ -11,8 +11,8 @@ body {
   width: 24px;
   display: inline-block;
   text-align: center;
-  background-color: #333;
-  color: #eee;
+  background-color: #ffeb3b;
+  color: #666;
 }
 #form,
 #results {
