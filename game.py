@@ -3,6 +3,7 @@
 
 import random
 import string
+import requests
 
 
 class Game:
@@ -18,4 +19,12 @@ class Game:
                 letters.remove(letter)
             else:
                 return False
-        return True
+        return self.is_checked(word)
+
+    @staticmethod
+    def is_checked(world):
+        data = requests.get(
+            f"https://wagon-dictionary.herokuapp.com/{world}")
+
+        response = data.json()
+        return True if response['found'] == 'true' else False
